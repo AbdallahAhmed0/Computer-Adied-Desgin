@@ -195,11 +195,12 @@ if(console.error){
 }
 document.querySelector('.solution').style.background= "rgb(210, 220, 234)";
 document.querySelector('#cy').style.background= "rgb(210, 220, 234)";
-document.querySelector('.solution').innerHTML=`Solutions: <p style=' font-size: 23px;
-font-weight: 500;color:red'>VB =[${VB}] <br/>JB =[${JB}] </p>`;
+document.querySelector('.solution').innerHTML=`Solutions:<p style=' font-size: 23px;
+font-weight: 500;color:red'><br/><br/>VB =[${VB}] <br/><br/>JB =[${JB}] </p>`;
 
 
 //draw graph
+
 var cy = cytoscape({
     container: document.getElementById('cy'),
     
@@ -225,24 +226,9 @@ var cy = cytoscape({
           'text-outline-color': 'black'
         }), 
     elements: {
-      nodes: [
-        { data: { id: '1', name: '1' } },
-        { data: { id: '2', name: '2' } },
-        { data: { id: '3', name: '3' } },
-        { data: { id: '4', name: '4' } },
-
-
-
-      ],
+      nodes: CreateNodes(numNodes),
       
-      edges: [
-        { data: { source: '1', target: '2' } },
-        { data: { source: '2', target: '3' } },
-        { data: { source: '1', target: '3' } },
-        { data: { source: '1', target: '4' } },
-        { data: { source: '3', target: '4' } },
-        { data: { source: '2', target: '4' } }
-      ]
+      edges: CreateEdge([...node1.concat(node1L)],[...node2.concat(node2L)])
     },
   
     layout: {
@@ -261,7 +247,20 @@ var cy = cytoscape({
 
     
     }
-
+function CreateNodes(num){
+    let nodes=[];
+    for(let i= 0 ; i<num ;i++){
+        nodes[i]={data: { id: `${i+1}`, name: `${i+1}` }}
+    }
+    return nodes
+}
+function CreateEdge(node1,node2){
+    let edges =[]
+    for(let i= 0 ; i<node1.length ;i++){
+        edges[i]={ data: { source: `${node1[i]}`, target: `${node2[i]}` } }
+    }
+    return edges
+}
 
 // Transpose Function
 function transpose(matrix) {
