@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<!-- This code is for demonstration purposes only.  You should not hotlink to Github, Rawgit, or files from the Cytoscape.js documentation in your production apps. -->
+<html>
+
+<head>
+    <link href="style.css" rel="stylesheet">
+    <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="utf-8" />
+    <meta name="viewport"
+        content="user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, minimal-ui" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.3.3/math.js"></script>
+    <script src="cytoscape.js"></script>
+
+
+    <title>CAD Project</title>
+
+</head>
+
+<body>
+    <div class="head">Computer Aided Design</div>
+    <div class="container">
+        <div class="tree">
+            <table id="table" class="table" >
+                <thead>
+                    <tr>
+                        <th>Def</th>
+                        <th>Branch 1</th>
+                        <th>Branch 2</th>
+                        <th>Branch 3</th>
+                        <th>Branch 4</th>
+                        <th>Branch 5</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="nameBranches">
+                        <td>Name</td>
+                        <td>
+                            <div class="mb-3">
+                                <input type="text" name="nameB" maxlength="2" id="nameB" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="mb-3">
+                                <input type="text" name="nameB" maxlength="2" id="nameB" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="mb-3">
+                                <input type="text" name="nameB" maxlength="2" id="nameB" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="mb-3">
+                                <input type="text" name="nameB"maxlength="2" id="nameB" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="mb-3">
+                                <input type="text" name="nameB"maxlength="2" id="nameB" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="node1">
+                        <td>node 1</td>
+                        <td>
+                            <div class="mb-3">
+                                <input type="number" name="node1Br" min="0" id="node1Br" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="mb-3">
+                                <input type="number" name="node1Br" min="0"id="node1Br" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="mb-3">
+                                <input type="number" name="node1Br" min="0" id="node1Br" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="mb-3">
+                                <input type="number" name="node1Br"min="0" id="node1Br" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="mb-3">
+                                <input type="number" name="node1Br" min="0"id="node1Br" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="node2">
+                        <td>node 2</td>
+                        <td>
+                            <div class="mb-3">
+                                <input type="number" name="node2Br"min="0" id="node2Br" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="mb-3">
+                                <input type="number" name="node2Br"min="0" id="node2Br" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="mb-3">
+                                <input type="number" name="node2Br"min="0" id="node2Br" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="mb-3">
+                                <input type="number" name="node2B" min="0"id="node2Br" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="mb-3">
+                                <input type="number" name="node2Br" min="0"id="node2Br" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="resistance">
+                        <td>Resistance</td>
+                        <td>
+                            <div class="mb-3">
+                                <input type="number" name="resBr"min="0" id="resBr" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="mb-3">
+                                <input type="number" name="resBr"min="0" id="resBr" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="mb-3">
+                                <input type="number" name="resBr"min="0" id="resBr" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="mb-3">
+                                <input type="number" name="resBr" min="0"id="resBr" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="mb-3">
+                                <input type="number" name="resBr" min="0"id="resBr" />
+                            </div>
+                        </td>
+                    </tr>
+
+
+                    <tr class="current">
+                        <td>Current</td>
+                        <td>
+                            <div class="mb-3">
+                                <input type="number" name="currentB1" id="currentB" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="mb-3">
+                                <input type="number" name="currentB" id="currentB" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="mb-3">
+                                <input type="number" name="currentB" id="currentB" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="mb-3">
+                                <input type="number" name="currentB" id="currentB" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="mb-3">
+                                <input type="number" name="currentB" id="currentB" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="voltage">
+                        <td>Voltage</td>
+                        <td>
+                            <div class="mb-3">
+                                <input type="number" name="voltageB" id="voltageB" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="mb-3">
+                                <input type="number" name="voltageB" id="voltageB" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="mb-3">
+                                <input type="number" name="voltageB" id="voltageB" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="mb-3">
+                                <input type="number" name="voltageB" id="voltageB" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="mb-3">
+                                <input type="number" name="voltageB" id="voltageB" />
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="link">
+            <table id="table" class="table">
+                <thead>
+                    <tr>
+                        <th>Def</th>
+                        <th>Link 1</th>
+                        <th>Link 2</th>
+                        <th>Link 3</th>
+                        <th>Link 4</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="nameLinks">
+                        <td>Name</td>
+                        <td>
+                            <div class="mb-3">
+                                <input type="text" name="nameL" maxlength="2" id="nameL" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="mb-3">
+                                <input type="text" name="nameL" maxlength="2" id="nameL" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="mb-3">
+                                <input type="text" name="nameL" maxlength="2" id="nameL" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="mb-3">
+                                <input type="text" name="nameL" maxlength="2" id="nameL" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="node1">
+                        <td>node 1</td>
+                        <td>
+                            <div class="mb-3">
+                                <input type="number" name="node1L" min="0" id="node1L" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="mb-3">
+                                <input type="number" name="node1L" min="0" id="node1L" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="mb-3">
+                                <input type="number" name="node1L" min="0" id="node1L" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="mb-3">
+                                <input type="number" name="node1L" min="0" id="node1L" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="node2">
+                        <td>node 2</td>
+                        <td>
+                            <div class="mb-3">
+                                <input type="number" name="node2L" min="0" id="node2L" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="mb-3">
+                                <input type="number" name="node2L" min="0" id="node2L" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="mb-3">
+                                <input type="number" name="node2L" min="0" id="node2L" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="mb-3">
+                                <input type="number" name="node2L" min="0" id="node2L" />
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr class="resistance">
+                        <td>Resistance</td>
+                        <td>
+                            <div class="mb-3">
+                                <input type="number" name="resL"min="0" id="resL" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="mb-3">
+                                <input type="number" name="resL"min="0" id="resL" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="mb-3">
+                                <input type="number" name="resL"min="0" id="resL" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="mb-3">
+                                <input type="number" name="resL" min="0"id="resL" />
+                            </div>
+                        </td>
+                    </tr>
+
+
+                    <tr class="current">
+                        <td>Current</td>
+                        <td>
+                            <div class="mb-3">
+                                <input type="number" name="currentL" id="currentL" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="mb-3">
+                                <input type="number" name="currentL" id="currentL" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="mb-3">
+                                <input type="number" name="currentL" id="currentL" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="mb-3">
+                                <input type="number" name="currentL" id="currentL" />
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="voltage">
+                        <td>Voltage</td>
+                        <td>
+                            <div class="mb-3">
+                                <input type="number" name="voltageL" id="voltageL" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="mb-3">
+                                <input type="number" name="voltageL" id="voltageL" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="mb-3">
+                                <input type="number" name="voltageL" id="voltageL" />
+                            </div>
+                        </td>
+                        <td>
+                            <div class="mb-3">
+                                <input type="number" name="voltageL" id="voltageL" />
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <button type="button" name="solve" id="solve" class="btn btn-primary">Solve</button>
+
+        
+        <div class="solution">
+
+        </div>
+        <div id="cy">
+
+        </div>
+    </div>
+
+    
+    <!-- Load application code at the end to ensure DOM is loaded -->
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
