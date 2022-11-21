@@ -1,4 +1,4 @@
 # Computer-Aided-Design
 ## program To solve questions of CAD
-![ScreenShot](screenshot/pic1.PNG )
-![ScreenShot](screenshot/pic2.PNG )
+![ScreenShot](screenshots/pic1.PNG )
+![ScreenShot](screenshots/pic2.PNG )
