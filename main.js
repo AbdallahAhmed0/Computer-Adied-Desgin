@@ -2,6 +2,9 @@
 
 
     document.querySelector('#solve').onclick=function(){
+        
+        //def Variables
+
         const node1=[];      const node2=[];
         const currentB=[];   const voltageB=[]; 
         const resBr=[];      const resLi=[];
@@ -136,11 +139,9 @@
 
     ATree=transpose(ATree);
     ALink=transpose(ALink);
+        
+    console.log(`EB = ${EB}, IB = ${IB} , ZB = ${ZB}`);
 
-    console.log(ATree);
-    console.log(ALink);
-    console.log(EB,IB);
-    console.log(ZB);
     ATree.pop();
     ALink.pop();
 
@@ -151,7 +152,7 @@ const A =[];
 for(let i = 0;i < ALink.length;i++){
 A[i]= ATree[i].concat(ALink[i]);
 }
-console.log(A);
+
 // C , Clink Matrix
 const C= math.multiply(math.inv(ATree),A);
 const CLink=math.multiply(math.inv(ATree),ALink);
@@ -173,7 +174,8 @@ for(let i = 0;i < BTree.length;i++){
     B[i]=BTree[i].concat(IMatrix[i]);
 }
 
-console.log(B,C);
+    console.log(`EB = ${EB}, IB = ${IB} , ZB = ${ZB}`);
+
     //equation : B * Zb * Btrans * IL = B * Eb - B * Zb * Ib
 
     let Btrans=transpose(B);
@@ -185,14 +187,14 @@ console.log(B,C);
 
     let JB=math.multiply(math.transpose(B) , IL);
     let VB=math.subtract(math.multiply(ZB , math.add(JB,IB)) , EB);
-for(let i = 0;i < JB.length;i++){
+   
+  for(let i = 0;i < JB.length;i++){
     JB[i]=Number.parseFloat(JB[i]).toFixed(2);
     VB[i]=Number.parseFloat(VB[i]).toFixed(2);
 }
 
-if(console.error){
-    document.querySelector('.solution').innerHTML=console.error.call;
-}
+
+        
 document.querySelector('.solution').style.background= "rgb(210, 220, 234)";
 document.querySelector('#cy').style.background= "rgb(210, 220, 234)";
 document.querySelector('.solution').innerHTML=`Solutions:<p style=' font-size: 23px;
